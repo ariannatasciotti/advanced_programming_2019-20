@@ -68,7 +68,9 @@ bool operator==(const Date& lhs, const Date&rhs) {
 }
 
 bool operator!=(const Date& lhs, const Date& rhs) {
-	return !(lhs==rhs);
+	return lhs.year() != rhs.year()
+		&& lhs.month() != rhs.month()
+		&& lhs.day() != rhs.day();
 }
 
 std::ostream& operator<<(std::ostream& os, const Date& d) {
