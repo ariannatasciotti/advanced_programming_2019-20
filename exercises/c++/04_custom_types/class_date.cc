@@ -62,15 +62,17 @@ void Date::add_1day() {                                                         
 /// helper functions ///
 
 bool operator==(const Date& lhs, const Date&rhs) {
-	return lhs.year() == rhs.year()
+		if ( lhs.year() == rhs.year()
 		&& lhs.month() == rhs.month()
-		&& lhs.day() == rhs.day();
+		&& lhs.day() == rhs.day() )
+		return true;
 }
 
 bool operator!=(const Date& lhs, const Date& rhs) {
-	return lhs.year() != rhs.year()
+		if( lhs.year() != rhs.year()
 		&& lhs.month() != rhs.month()
-		&& lhs.day() != rhs.day();
+		&& lhs.day() != rhs.day() )
+		return true;
 }
 
 std::ostream& operator<<(std::ostream& os, const Date& d) {
